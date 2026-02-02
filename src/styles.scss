@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+:root {
+    // BACKGROUNDS
+    --background-app: #F6F6F8;
+    --background-color-primary-button: #135bec;
+    --background-white: #FFFFFF;
+    
+    --border-inputs: #dbdfe6;
+
+    // TEXTS COLORS
+    --color-titles: #111318;
+    --color-text: #616f89;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: var(--background-app);
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border-color: #e5e7eb;
+}
+p {
+    font-size: 16px;
+}
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    input {
+        height: 48px;
+        width: 100%;
+        border: 1px solid var(--border-inputs);
+        border-radius: 8px;
+    }
+}
+.primary_button {
+    background-color: var(--background-color-primary-button);
+    color: var(--background-white);
+    border: 0;
+    height: 48px;
+    padding: 0 40px;
+    border-radius: 8px;
+}

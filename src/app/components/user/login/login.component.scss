@@ -1,0 +1,36 @@
+.content_login {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    .bg_imagen_login {
+        width: 65vw;
+        background-image: url(../../../../assets/login/bg_login.webp);
+        background-position: bottom right;
+        background-size: cover;
+    }
+    .section_login {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+
+        width: 35vw;
+        justify-content: center;
+
+        .section_information_login {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .title_welcome {
+                font-size: 30px;
+            }
+        }
+        .section_form_login {
+
+        }
+        hr {
+            width: 100%;
+        }
+    }
+}
