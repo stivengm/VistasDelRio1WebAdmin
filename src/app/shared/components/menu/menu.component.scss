@@ -1,0 +1,20 @@
+.menu-section {
+    width: 260px;
+    height: 100vh;
+    background-color: var(--background-white);
+    border-right-width: 1px;
+    border-color: #dbdfe6;
+    .app-header-content {
+        .description-header-content {
+            .title-portal-admin {
+                font-weight: 700;
+                font-size: 16px;
+                margin: 0;
+            }
+            .description-title-portal-admin {
+                margin: 0;
+            }
+        }
+    }
+
+}
