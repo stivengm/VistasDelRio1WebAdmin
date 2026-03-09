@@ -6,6 +6,7 @@ import { StorageService } from '../../../core/services/storage.service';
 import { Router } from '@angular/router';
 import { AccountModel } from '../../../core/models/account.model';
 import { goToPage } from '../../helpers/navigation.helper';
+import { DataAppService } from '../../../core/services/data-app.service';
 
 @Component({
   selector: 'app-menu',
@@ -20,7 +21,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private storageService: StorageService,
     private menuService: MenuService,
-    private router: Router
+    private router: Router,
+    private dataAppService: DataAppService
   ) {}
 
   ngOnInit() {
@@ -52,7 +54,8 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/usuarios/inicio-sesion']);
   }
 
-  redirect(link: string) {
+  redirect(namePage: string, link: string) {
+    this.dataAppService.setIsNamePage(namePage);
     goToPage(this.router, link);
   }
 }
