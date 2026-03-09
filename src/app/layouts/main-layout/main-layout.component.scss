@@ -4,6 +4,7 @@
         width: 100%;
         .content-page {
             margin: 20px;
+            height: calc(100vh - 60px - 80px - 40px);
         }
     }
 }
