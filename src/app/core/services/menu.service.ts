@@ -15,10 +15,6 @@ export class MenuService {
     private httpApp: HttpAppService
   ) {}
 
-  getUsers() {
-    return this.httpApp.get('/api/users');
-  }
-
   getMenu() {
     return this.httpApp.get<ApiResponse<ItemsMenuModel[]>>('/getItemsMenu')
   }
