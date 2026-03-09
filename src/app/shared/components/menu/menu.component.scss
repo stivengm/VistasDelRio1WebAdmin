@@ -5,14 +5,66 @@
     border-right-width: 1px;
     border-color: #dbdfe6;
     .app-header-content {
-        .description-header-content {
-            .title-portal-admin {
-                font-weight: 700;
-                font-size: 16px;
-                margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .section-icon-header-content {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px 10px;
+            .section-icon {
+                background-color: var(--background-color-primary-button);
+                border-radius: 8px;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    // padding: 5px;
+                    width: 35px;
+                    height: 35px;
+                }
             }
-            .description-title-portal-admin {
-                margin: 0;
+            .description-header-content {
+                .title-portal-admin {
+                    font-weight: 700;
+                    font-size: 16px;
+                    margin: 0;
+                }
+                .description-title-portal-admin {
+                    margin: 0;
+                }
+            }
+        }
+        .items-menu {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            .item-menu {
+                padding: 10px 10px 10px 10px;
+                cursor: pointer;
+                transition: all 150ms;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                &:hover {
+                    background-color: var(--gray-hover-option);
+                }
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        .item-logout {
+            padding: 10px 10px 10px 10px;
+            cursor: pointer;
+            transition: all 150ms;
+            &:hover {
+                background-color: var(--gray-hover-option);
             }
         }
     }

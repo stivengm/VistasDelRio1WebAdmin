@@ -70,7 +70,7 @@ export class LoginComponent {
       this.storageService.saveStorage('token', resp.data.token);
       this.storageService.saveStorage('user', resp.data);
 
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
     });
   }
 

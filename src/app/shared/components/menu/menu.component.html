@@ -2,20 +2,23 @@
      <div class="app-header-content">
         <div class="section-icon-header-content">
             <div class="section-icon">
-
+                <img src="assets/icons/office_icon.svg" alt="">
+            </div>
+            <div class="description-header-content">
+                <p class="title-portal-admin">Portal Admin</p>
+                <p class="description-title-portal-admin">Gestión residencial</p>
             </div>
         </div>
-        <div class="description-header-content">
-            <p class="title-portal-admin">Portal Admin</p>
-            <p class="description-title-portal-admin">Gestión residencial</p>
-        </div>
 
-        <div>
+        <div class="items-menu">
             @for (menu of itemsMenu; track $index) {
-                <div>
+                <div class="item-menu">
+                    <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
                     {{ menu.name }}
                 </div>
             }
         </div>
+
+        <div class="item-logout">Cerrar sesión</div>
      </div>
 </div>

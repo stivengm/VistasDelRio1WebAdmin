@@ -3,11 +3,14 @@ import { Routes } from '@angular/router';
 // Layouts
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { authGuard } from './core/guards/auth.guard';
+import { noAuthGuard } from './core/guards/no-auth.guard';
 
 export const routes: Routes = [
     {
         path: '',
         component: MainLayoutComponent,
+        canActivate: [ authGuard ],
         children: [
             {
                 path: 'dashboard',
@@ -26,6 +29,7 @@ export const routes: Routes = [
     {
         path: 'usuarios',
         component: AuthLayoutComponent,
+        canActivate: [ noAuthGuard ],
         children: [
             {
                 path: 'inicio-sesion',
