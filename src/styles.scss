@@ -82,3 +82,19 @@ input.input-error {
     -ms-user-select:none;
     user-select:none;
 }
+
+
+
+
+.seccion_with_header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        .header_title {
+            margin: 0;
+        }
+    }
+}
