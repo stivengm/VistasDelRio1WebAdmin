@@ -12,7 +12,7 @@
 
         <div class="items-menu">
             @for (menu of itemsMenu; track $index) {
-                <div class="item-menu text-no-selected">
+                <div class="item-menu text-no-selected" (click)="redirect(menu.url)">
                     <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
                     {{ menu.name }}
                 </div>

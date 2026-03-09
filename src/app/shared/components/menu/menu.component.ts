@@ -5,6 +5,7 @@ import { MenuService } from '../../../core/services/menu.service';
 import { StorageService } from '../../../core/services/storage.service';
 import { Router } from '@angular/router';
 import { AccountModel } from '../../../core/models/account.model';
+import { goToPage } from '../../helpers/navigation.helper';
 
 @Component({
   selector: 'app-menu',
@@ -49,5 +50,9 @@ export class MenuComponent implements OnInit {
     console.log("Logout");
     this.storageService.clearStorage();
     this.router.navigate(['/usuarios/inicio-sesion']);
+  }
+
+  redirect(link: string) {
+    goToPage(this.router, link);
   }
 }
