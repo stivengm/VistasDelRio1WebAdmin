@@ -27,7 +27,9 @@
             }
         }
         .section_form_login {
-
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
         }
         hr {
             width: 100%;

@@ -6,6 +6,7 @@
     --background-app: #F6F6F8;
     --background-color-primary-button: #135bec;
     --background-white: #FFFFFF;
+    --danger-color: #e53935;
     
     --border-inputs: #dbdfe6;
 
@@ -34,11 +35,16 @@ p {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    input {
-        height: 48px;
-        width: 100%;
-        border: 1px solid var(--border-inputs);
-        border-radius: 8px;
+    .section_input {
+        input {
+            height: 48px;
+            width: 100%;
+            border: 1px solid var(--border-inputs);
+            border-radius: 8px;
+        }
+        .validators_section {
+            color: #808080;
+        }
     }
 }
 .primary_button {
@@ -48,4 +54,17 @@ p {
     height: 48px;
     padding: 0 40px;
     border-radius: 8px;
+}
+
+
+
+// FORMULARIOS
+input {
+    padding: 0 10px;
+    font-size: 17px;
+    box-sizing: border-box;
+    outline: none;
+}
+input.input-error {
+    border: 1px solid var(--danger-color) !important;
 }

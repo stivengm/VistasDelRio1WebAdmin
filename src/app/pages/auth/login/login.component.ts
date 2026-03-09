@@ -2,6 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { validEmail } from '../../../shared/validators/input-validators';
+import { AuthService } from '../../../core/services/auth.service';
+import { LoginRequestModel } from '../../../core/models/request/login-request.model';
+import { modalError } from '../../../shared/modals/modals-swal';
+import { ModalsModel } from '../../../shared/modals/modals.model';
+import { Router } from '@angular/router';
+import { StorageService } from '../../../core/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +22,12 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private storageService: StorageService,
+    private router: Router
+  ) {
 
     this.loginForm = this.fb.group({
       email: ['',
@@ -35,15 +46,32 @@ export class LoginComponent {
   }
 
   login(): void {
-
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
     }
 
-    const formValue = this.loginForm.value;
+    const formValue = this.loginForm.value as LoginRequestModel;
 
-    console.log('Login data:', formValue);
+    this.authService.login(formValue).subscribe((resp) => {
+      if (resp.code != "LU001") {
+
+        let reqModel: ModalsModel = {
+          title: 'Ha ocurrido un error',
+          text: resp.message,
+          onSuccess() {},
+          onBack() {}
+        }
+
+        modalError(reqModel)
+        return;
+      }
+
+      this.storageService.saveStorage('token', resp.data.token);
+      this.storageService.saveStorage('user', resp.data);
+
+      this.router.navigate(['/home']);
+    });
   }
 
 }
