@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ItemsMenuModel } from '../../../core/models/items-menu.model';
 import { MenuService } from '../../../core/services/menu.service';
 import { StorageService } from '../../../core/services/storage.service';
+import { Router } from '@angular/router';
+import { AccountModel } from '../../../core/models/account.model';
 
 @Component({
   selector: 'app-menu',
@@ -12,10 +14,12 @@ import { StorageService } from '../../../core/services/storage.service';
 })
 export class MenuComponent implements OnInit {
   itemsMenu: ItemsMenuModel[] = [];
+  account: AccountModel | undefined;
 
   constructor(
     private storageService: StorageService,
-    private menuService: MenuService
+    private menuService: MenuService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -25,11 +29,25 @@ export class MenuComponent implements OnInit {
       this.menuService.getMenu().subscribe((respMenus) => {
         this.itemsMenu = respMenus.data;
 
+        // let account: AccountModel = {
+          
+        // }
+
         this.storageService.saveStorage('itemsMenu', this.itemsMenu);
       });
     } else {
       this.itemsMenu = storageItems;
     }
 
+    let account = this.storageService.readStorage('user');
+    if (account) {
+      this.account = account;
+    }
+  }
+
+  logout() {
+    console.log("Logout");
+    this.storageService.clearStorage();
+    this.router.navigate(['/usuarios/inicio-sesion']);
   }
 }

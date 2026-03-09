@@ -13,6 +13,7 @@
             flex-direction: row;
             gap: 10px;
             padding: 10px 10px;
+            cursor: pointer;
             .section-icon {
                 background-color: var(--background-color-primary-button);
                 border-radius: 8px;
@@ -22,7 +23,6 @@
                 justify-content: center;
                 align-items: center;
                 img {
-                    // padding: 5px;
                     width: 35px;
                     height: 35px;
                 }
@@ -56,6 +56,38 @@
                 img {
                     width: 30px;
                     height: 30px;
+                }
+            }
+        }
+        .section_account {
+            display: flex;
+            gap: 10px;
+            padding: 0 10px;
+            .section_icon_account {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+                min-height: 50px;
+                border-radius: 100%;
+                background-color: red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            .account_information {
+                display: flex;
+                flex-direction: column;
+                .name_account {
+                    margin: 0;
+                    font-weight: 600;
+                }
+                .role_account {
+                    margin: 0;
+                    font-weight: 300;
                 }
             }
         }

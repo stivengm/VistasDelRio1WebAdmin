@@ -1,6 +1,6 @@
 <div class="menu-section">
      <div class="app-header-content">
-        <div class="section-icon-header-content">
+        <div class="section-icon-header-content text-no-selected">
             <div class="section-icon">
                 <img src="assets/icons/office_icon.svg" alt="">
             </div>
@@ -12,13 +12,27 @@
 
         <div class="items-menu">
             @for (menu of itemsMenu; track $index) {
-                <div class="item-menu">
+                <div class="item-menu text-no-selected">
                     <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
                     {{ menu.name }}
                 </div>
             }
         </div>
 
-        <div class="item-logout">Cerrar sesión</div>
+        <div class="item-logout">Configuración</div>
+        <hr class="hr-horizontal">
+        @if (account) {
+            <div class="section_account">
+                <div class="section_icon_account">
+                    <img src="assets/icons/user_icon.svg" alt="icon_account">
+                </div>
+                <div class="account_information">
+                    <p class="name_account">{{ account.fullName }}</p>
+                    <p class="role_account">{{ account.roleName }}</p>
+                </div>
+            </div>
+        }
+        <hr class="hr-horizontal">
+        <div class="item-logout" (click)="logout()">Cerrar sesión</div>
      </div>
 </div>

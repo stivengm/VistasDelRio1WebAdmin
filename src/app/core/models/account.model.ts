@@ -1,8 +1,6 @@
-import { AccountModel } from "../account.model";
-import { ApartamentModel } from "../apartaments.model";
+import { ApartamentModel } from "./apartaments.model";
 
-export interface LoginResponseModel extends AccountModel {
-    id: string;
+export interface AccountModel {
     apartaments: Array<ApartamentModel>;
     isTherePaymentAgreementInPlace: boolean;
     fullName: string;
@@ -11,5 +9,4 @@ export interface LoginResponseModel extends AccountModel {
     roleId: number;
     roleName: string
     lastLogin: string;
-    token: string
 }
