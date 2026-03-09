@@ -29,6 +29,14 @@ export const routes: Routes = [
             {
                 path: 'facturacion',
                 loadComponent: () => import('./pages/billing/billing.component').then(c => c.BillingComponent)
+            },
+            {
+                path: 'gastos',
+                loadComponent: () => import('./pages/expenses/expenses.component').then(c => c.ExpensesComponent)
+            },
+            {
+                path: 'reportes',
+                loadComponent: () => import('./pages/reports/reports.component').then(c => c.ReportsComponent)
             }
         ]
     },
