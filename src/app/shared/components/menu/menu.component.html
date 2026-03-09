@@ -9,5 +9,13 @@
             <p class="title-portal-admin">Portal Admin</p>
             <p class="description-title-portal-admin">Gestión residencial</p>
         </div>
+
+        <div>
+            @for (menu of itemsMenu; track $index) {
+                <div>
+                    {{ menu.name }}
+                </div>
+            }
+        </div>
      </div>
 </div>

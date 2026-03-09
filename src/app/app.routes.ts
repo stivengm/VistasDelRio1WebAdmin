@@ -32,5 +32,9 @@ export const routes: Routes = [
                 loadComponent: () => import('./pages/auth/login/login.component').then(c => c.LoginComponent)
             }
         ]
+    },
+    {
+        path: '**',
+        redirectTo: 'usuarios/inicio-sesion'
     }
 ];
