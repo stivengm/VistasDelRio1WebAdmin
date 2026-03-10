@@ -3,4 +3,5 @@ export interface ItemsMenuModel {
     name: string;
     url: string;
     icon: string;
+    isViewAdmin: boolean;
 }

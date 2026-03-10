@@ -55,10 +55,11 @@ export class LoginComponent {
 
     this.authService.login(formValue).subscribe((resp) => {
       if (resp.code != "LU001") {
-
         let reqModel: ModalsModel = {
+          icon: "error",
           title: 'Ha ocurrido un error',
           text: resp.message,
+          confirmButtonText: "Aceptar",
           onSuccess() {},
           onBack() {}
         }

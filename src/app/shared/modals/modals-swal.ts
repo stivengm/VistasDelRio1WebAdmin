@@ -3,7 +3,7 @@ import { ModalsModel } from "./modals.model";
 
 export function modalError(modal: ModalsModel) {
     return Swal.fire({
-        icon: 'success',
+        icon: modal.icon,
         title: modal.title,
         text: modal.text,
         html: modal.htmlMessage,
