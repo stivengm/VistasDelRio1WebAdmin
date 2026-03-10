@@ -6,10 +6,23 @@
             background-color: var(--background-white);
             border-radius: 12px;
             border: 1px solid var(--border-inputs);
+            overflow: hidden;
             .item_document {
                 display: flex;
                 justify-content: space-between;
                 padding: 10px;
+                transition: all 150ms;
+                &:hover {
+                    background-color: var(--gray-hover-option);
+                }
+                &:first-child {
+                    border-top-left-radius: 11px;
+                    border-top-right-radius: 11px;
+                }
+                &:last-child {
+                    border-bottom-left-radius: 11px;
+                    border-bottom-right-radius: 11px;
+                }
             }
             .item_document + .item_document {
                 border-top: 1px solid var(--border-inputs);
