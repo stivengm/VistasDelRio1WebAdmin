@@ -12,10 +12,17 @@
 
         <div class="items-menu">
             @for (menu of itemsMenu; track $index) {
-                <div class="item-menu text-no-selected" (click)="redirect(menu.name, menu.url)">
-                    <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
-                    {{ menu.name }}
-                </div>
+                @if (account && account!.roleId == 1 && menu.isViewAdmin) {
+                    <div class="item-menu text-no-selected" (click)="redirect(menu.name, menu.url)">
+                        <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
+                        {{ menu.name }}
+                    </div>
+                } @else {
+                    <div class="item-menu text-no-selected" (click)="redirect(menu.name, menu.url)">
+                        <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
+                        {{ menu.name }}
+                    </div>
+                }
             }
         </div>
 

@@ -26,15 +26,13 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getAccountObservable();
+    
     let storageItems = this.storageService.readStorage('itemsMenu');
 
     if (!storageItems) {
       this.menuService.getMenu().subscribe((respMenus) => {
         this.itemsMenu = respMenus.data;
-
-        // let account: AccountModel = {
-          
-        // }
 
         this.storageService.saveStorage('itemsMenu', this.itemsMenu);
       });
@@ -44,8 +42,14 @@ export class MenuComponent implements OnInit {
 
     let account = this.storageService.readStorage('user');
     if (account) {
-      this.account = account;
+      this.dataAppService.setIsUser(account);
     }
+  }
+
+  getAccountObservable() {
+    this.dataAppService.getIsUser().subscribe((user) => {
+      this.account = user;
+    });
   }
 
   logout() {
