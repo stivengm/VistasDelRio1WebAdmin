@@ -1,0 +1,19 @@
+.documents-page {
+    .seccion_with_header {
+        .documents {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-white);
+            border-radius: 12px;
+            border: 1px solid var(--border-inputs);
+            .item_document {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+            }
+            .item_document + .item_document {
+                border-top: 1px solid var(--border-inputs);
+            }
+        }
+    }
+}
