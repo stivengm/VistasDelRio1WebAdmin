@@ -1,6 +1,12 @@
 .dashboard-page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     .seccion_with_header {
         .events {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             .event {
                 display: flex;
                 flex-direction: column;
@@ -51,5 +57,45 @@
                 }
             }
         }
+        .resumen_finance {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            .item_finance {
+                background: var(--background-white);
+                border: 1px solid var(--border-inputs);
+                border-radius: 12px;
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                @media (max-width: 900px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @media (max-width: 500px) {
+                    grid-template-columns: 1fr;
+                }
+                .title_item_finance {
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    letter-spacing: .7px;
+                    color: var(--color-text);
+                }
+                .price_item_finance {
+                    margin: 0;
+                    font-weight: 700;
+                    font-size: 35px;
+                    color: var(--color-titles);
+                }
+                .place_item_finance {
+                    margin: 0;
+                }
+            }
+        }
     }
 }
+
+
+

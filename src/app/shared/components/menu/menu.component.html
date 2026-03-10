@@ -19,7 +19,10 @@
             }
         </div>
 
-        <div class="item-logout">Configuración</div>
+        <div class="item-logout">
+            <img src="assets/icons/configuration_icon.svg" alt="configuration_icon">
+            Configuración
+        </div>
         <hr class="hr-horizontal">
         @if (account) {
             <div class="section_account">
@@ -33,6 +36,9 @@
             </div>
         }
         <hr class="hr-horizontal">
-        <div class="item-logout" (click)="logout()">Cerrar sesión</div>
+        <div class="item-logout" (click)="logout()">
+            <img src="assets/icons/logout_icon.svg" alt="logout_icon">
+            Cerrar sesión
+        </div>
      </div>
 </div>
