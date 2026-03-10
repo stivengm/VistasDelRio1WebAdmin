@@ -71,7 +71,11 @@ export class LoginComponent {
       this.storageService.saveStorage('token', resp.data.token);
       this.storageService.saveStorage('user', resp.data);
 
-      this.router.navigate(['/dashboard']);
+      if (resp.data.roleId == 1) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.router.navigate(['/gastos']);
+      }
     });
   }
 

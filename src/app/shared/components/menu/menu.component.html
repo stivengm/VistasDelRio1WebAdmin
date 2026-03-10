@@ -17,7 +17,7 @@
                         <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
                         {{ menu.name }}
                     </div>
-                } @else if (menu.isViewAdmin) {
+                } @else if (!menu.isViewAdmin) {
                     <div class="item-menu text-no-selected" (click)="redirect(menu.name, menu.url)">
                         <img src="assets/icons/{{ menu.icon }}" alt="icon_{{ menu.name }}">
                         {{ menu.name }}
