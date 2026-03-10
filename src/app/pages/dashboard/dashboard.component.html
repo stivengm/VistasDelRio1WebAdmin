@@ -12,6 +12,11 @@
             <div class="events">
                 @for (event of allEvents; track $index) {
                     <div class="event">
+                        <span class="confetti confetti-left-1">🎉</span>
+                        <span class="confetti confetti-left-2">✨</span>
+                        <span class="confetti confetti-right-1">🎊</span>
+                        <span class="confetti confetti-right-2">🥳</span>
+
                         <h3 class="title-event">{{ event.name }}</h3>
                         <p class="description-event">{{ event.description }}</p>
                         <p class="place-event">¡Te esperamos en {{ event.place }}!</p>

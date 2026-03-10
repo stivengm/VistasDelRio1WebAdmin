@@ -1,13 +1,6 @@
 .dashboard-page {
     .seccion_with_header {
         .events {
-            .header_events {
-                display: flex;
-                justify-content: space-between;
-                .header_title {
-                    margin: 0;
-                }
-            }
             .event {
                 display: flex;
                 flex-direction: column;
@@ -19,14 +12,42 @@
                 border: 1px solid var(--border-inputs);
                 transition: all 150ms;
                 cursor: pointer;
-                .title-event {
-                    margin: 0;
-                }
-                .description-event {
-                    margin: 0;
-                }
+                position: relative;
+                overflow: visible;
+                will-change: transform;
                 &:hover {
                     scale: 1.025;
+                }
+                .title-event { margin: 0; }
+                .description-event { margin: 0; }
+                .confetti {
+                    position: absolute;
+                    font-size: 22px;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all .45s cubic-bezier(.25,.8,.25,1);
+                }
+                .confetti-left-1 { left: 10px; top: 10px; }
+                .confetti-left-2 { left: 25px; top: 20px; }
+                .confetti-right-1 { right: 10px; top: 10px; }
+                .confetti-right-2 { right: 25px; top: 20px; }
+                &:hover {
+                    .confetti-left-1 {
+                        opacity: 1;
+                        transform: translate(-20px,-30px) rotate(-40deg) scale(1.2);
+                    }
+                    .confetti-left-2 {
+                        opacity: 1;
+                        transform: translate(-15px,-40px) rotate(-20deg) scale(1.1);
+                    }
+                    .confetti-right-1 {
+                        opacity: 1;
+                        transform: translate(20px,-30px) rotate(40deg) scale(1.2);
+                    }
+                    .confetti-right-2 {
+                        opacity: 1;
+                        transform: translate(15px,-40px) rotate(20deg) scale(1.1);
+                    }
                 }
             }
         }
