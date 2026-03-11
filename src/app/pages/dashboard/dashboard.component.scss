@@ -95,7 +95,25 @@
             }
         }
     }
+    .sections-charts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        .item-charts {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid var(--border-inputs);
+            border-radius: 12px;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+    }
 }
 
 
 
+@media (max-width: 768px) {
+  .sections-charts {
+    grid-template-columns: 1fr;
+  }
+}

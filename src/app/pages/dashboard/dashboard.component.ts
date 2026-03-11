@@ -3,10 +3,14 @@ import { EventsService } from '../../core/services/events.service';
 import { EventsResponse } from '../../core/models/response/events-response.model';
 import { DataAppService } from '../../core/services/data-app.service';
 import { EventsComponent } from '../../shared/components/events/events.component';
+import { ChartsComponent } from '../../shared/components/charts/charts.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ EventsComponent ],
+  imports: [
+    EventsComponent,
+    ChartsComponent
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
