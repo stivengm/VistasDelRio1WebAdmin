@@ -6,8 +6,26 @@
         overflow-y: auto;
         .content-page {
             margin: 20px 0 20px 20px;
-            padding-right: 20px;
             min-height: calc(100vh - 60px - 80px - 40px);
+            .content-layout {
+                display: grid;
+                grid-template-columns: 1fr 320px;
+                gap: 20px;
+                padding-right: 20px;
+
+                &.admin-layout {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .content-main {
+                min-width: 0;
+            }
+            .content-events {
+                position: sticky;
+                top: 20px;
+                position: sticky;
+                height: fit-content;
+            }
         }
     }
 }

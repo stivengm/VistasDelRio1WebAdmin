@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../core/services/events.service';
 import { EventsResponse } from '../../core/models/response/events-response.model';
 import { DataAppService } from '../../core/services/data-app.service';
+import { EventsComponent } from '../../shared/components/events/events.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [ EventsComponent ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -26,6 +27,7 @@ export class DashboardComponent implements OnInit {
 
     this.eventsService.getAllEvents().subscribe((events) => {
 
+      this.dataAppService.setIsEvents(events.data);
       this.allEvents = events.data;
     })
   }

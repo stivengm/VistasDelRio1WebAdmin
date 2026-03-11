@@ -3,7 +3,14 @@
     <div class="main-page">
         <app-header></app-header>
         <div class="content-page">
-            <router-outlet></router-outlet>
+            <div class="content-layout" [class.admin-layout]="account?.roleId == 1">
+                <div class="content-main">
+                    <router-outlet></router-outlet>
+                </div>
+                @if (account && account.roleId == 2) {
+                    <app-events></app-events>
+                }
+            </div>
         </div>
         <app-footer></app-footer>
     </div>
