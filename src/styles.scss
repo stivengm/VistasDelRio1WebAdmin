@@ -8,6 +8,8 @@
     --background-white: #FFFFFF;
     --danger-color: #e53935;
     --gray-hover-option: rgb(243, 244, 246);
+    --color-success: #07883b;
+    --color-danger: #e73908;
     
     --border-inputs: #dbdfe6;
 
@@ -100,4 +102,11 @@ input.input-error {
             margin: 0;
         }
     }
+}
+
+.text-success {
+    color: var(--color-success);
+}
+.text-danger {
+    color: var(--color-danger);
 }
